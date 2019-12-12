@@ -8,7 +8,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.itla.myappapi.Posts;
 import com.itla.myappapi.R;
 import com.itla.myappapi.entity.Post;
 
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 
 public class PostAdaptador extends RecyclerView.Adapter {
         ArrayList<Post> posts;
-        static TextView tvbody, tvcomments, tvcreatedAt, tvid, tvliked, tvlikes, tvtags, tvtitle, tvuserEmail, tvuserName, tvviews;
+        static TextView tvbody, tvcomments, tvcreatedAt, tvid, tvliked, tvlikes, tvtags, tvtitle, tvuserEmail, tvuserName, tvviews, tvtag;
 
         public PostAdaptador(ArrayList<Post>posts) {
             this.posts=posts;
@@ -31,6 +30,8 @@ public class PostAdaptador extends RecyclerView.Adapter {
                 tvtitle = itemView.findViewById(R.id.tvtitle);
                 tvuserEmail = itemView.findViewById(R.id.userEmail);
                 tvviews = itemView.findViewById(R.id.tvviews);
+                tvuserName = itemView.findViewById(R.id.tvuserName);
+                tvtag = itemView.findViewById(R.id.tvtag);
             }
         }
 
@@ -52,11 +53,10 @@ public class PostAdaptador extends RecyclerView.Adapter {
             tvcomments.setText(post.getComments());
             tvlikes.setText(post.getLikes());
             tvviews.setText(post.getViews());
-            tvtitle.setText(post.getTitles());
+            tvtitle.setText(post.getTitle());
             tvuserEmail.setText(post.getUserEmail());
             tvuserName.setText(post.getUserName());
-
-
+            tvtag.setText(post.getTag());
         }
 
         @Override

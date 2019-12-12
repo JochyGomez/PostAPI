@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/ovalado"
+    android:padding="8dp">
 
     <TextView
         android:id="@+id/tvtitle"
@@ -12,9 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="200dp"
         android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,7 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:background="@drawable/cantidades"
+        android:padding="4dp"
         android:text=" "
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tvuserName"
         app:layout_constraintTop_toBottomOf="@+id/tvuserName" />
 
@@ -65,21 +72,67 @@
         android:id="@+id/tvcomments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/cantidades"
+        android:ellipsize="none"
+        android:padding="4dp"
         android:text=" "
-        app:layout_constraintBottom_toBottomOf="@+id/tvviews"
-        app:layout_constraintStart_toEndOf="@+id/tvviews"
-        app:layout_constraintTop_toTopOf="@+id/tvviews" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvvistas"
+        app:layout_constraintStart_toEndOf="@+id/tvvistas"
+        app:layout_constraintTop_toTopOf="@+id/tvvistas" />
 
     <TextView
         android:id="@+id/tvlikes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/cantidades"
+        android:padding="4dp"
         android:text=" "
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvcomentarios"
+        app:layout_constraintStart_toEndOf="@+id/tvcomentarios"
+        app:layout_constraintTop_toTopOf="@+id/tvcomentarios" />
+
+    <TextView
+        android:id="@+id/tvmegusta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="ME GUSTA"
+        app:layout_constraintBottom_toBottomOf="@+id/tvlikes"
+        app:layout_constraintStart_toEndOf="@+id/tvlikes"
+        app:layout_constraintTop_toTopOf="@+id/tvlikes" />
+
+    <TextView
+        android:id="@+id/tvcomentarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="COMENTARIOS"
         app:layout_constraintBottom_toBottomOf="@+id/tvcomments"
         app:layout_constraintStart_toEndOf="@+id/tvcomments"
-        app:layout_constraintTop_toBottomOf="@+id/tvuserName"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/tvcomments" />
+
+    <TextView
+        android:id="@+id/tvvistas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="VISTAS"
+        app:layout_constraintBottom_toBottomOf="@+id/tvviews"
+        app:layout_constraintStart_toEndOf="@+id/tvviews"
+        app:layout_constraintTop_toTopOf="@+id/tvviews" />
+
+    <TextView
+        android:id="@+id/tvtag"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/tvtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvtitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

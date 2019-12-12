@@ -18,9 +18,13 @@ public class BlogApiServices {
     }
 
     public SecurityService getSecurityService(){
-
         return retrofit.create(SecurityService.class);
     }
+
+    public PostServices getPostService(){
+        return retrofit.create(PostServices.class);
+    }
+
 
     public static BlogApiServices getInstance(){
 

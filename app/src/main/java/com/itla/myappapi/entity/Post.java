@@ -3,13 +3,14 @@ package com.itla.myappapi.entity;
 import android.content.Intent;
 
 public class Post {
-    private String body;
-    private Integer comments;
-    private Integer likes;
-    private String titles;
-    private String userEmail;
-    private String userName;
-    private Integer views;
+     String body;
+     String comments;
+     String likes;
+     String title;
+     String userEmail;
+     String userName;
+     String views;
+     String tag;
 
     public String getBody() {
         return body;
@@ -19,28 +20,28 @@ public class Post {
         this.body = body;
     }
 
-    public Integer getComments() {
+    public String getComments() {
         return comments;
     }
 
-    public void setComments(Integer comments) {
+    public void setComments(String comments) {
         this.comments = comments;
     }
 
-    public Integer getLikes() {
+    public String getLikes() {
         return likes;
     }
 
-    public void setLikes(Integer likes) {
+    public void setLikes(String likes) {
         this.likes = likes;
     }
 
-    public String getTitles() {
-        return titles;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitles(String titles) {
-        this.titles = titles;
+    public void setTitle(String titles) {
+        this.title = titles;
     }
 
     public String getUserEmail() {
@@ -59,11 +60,19 @@ public class Post {
         this.userName = userName;
     }
 
-    public Integer getViews() {
+    public String getViews() {
         return views;
     }
 
-    public void setViews(Integer views) {
+    public void setViews(String views) {
         this.views = views;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

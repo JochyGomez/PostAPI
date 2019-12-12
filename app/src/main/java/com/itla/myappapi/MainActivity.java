@@ -3,6 +3,7 @@ package com.itla.myappapi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -29,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SharedPreferences editor = getApplicationContext().getSharedPreferences("mypreferences", MODE_PRIVATE);
+        String token= editor.getString("token", null);
+        if (token!= null){
+            Intent post = new Intent(getApplicationContext(), Posts.class);
+            startActivity(post);
+        }
+
         final EditText correo=findViewById(R.id.tvemail);
         final EditText contrasena=findViewById(R.id.tvpass);
         Button iniciar=findViewById(R.id.btnlogin);
@@ -50,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
                         if (response.code()== 201) {
                             User user = response.body();
+                            SharedPreferences.Editor editor = getSharedPreferences("mypreferences", MODE_PRIVATE).edit();
+                            editor.putString("token", "Bearer " + user.getToken());
+
+                            editor.apply();
                             Log.i("LOGIN", user.toString());
                             Toast toast1 = Toast.makeText(getApplicationContext(), "Bienvenido", Toast.LENGTH_SHORT);
                             toast1.setGravity(Gravity.CENTER,0 ,0 );
